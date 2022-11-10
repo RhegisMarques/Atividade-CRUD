@@ -1,34 +1,33 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body{
+body {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ebebeb;
+  background-color: #dbdbdb;
 }
 
-button{
+button {
   cursor: pointer;
-
 }
 
-.container{
+.container {
   width: 80%;
   height: 80%;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 15px;
   background: #fff;
-
 }
 
-.header{
+.header {
   min-height: 70px;
   display: flex;
   align-items: center;
@@ -36,231 +35,183 @@ button{
   margin: 12px;
 }
 
-.header span{
+.header span {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
-  
-
+  text-transform: uppercase;
 }
 
-#new{
+#new {
   width: 150px;
   font-size: 16px;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: none;
-  background-color: #397de2;
+  background-color: #000000;
   color: #fff;
-
-
 }
 
-.dTable{
+.dTable {
   padding: 10px;
   width: auto;
   height: inherit;
   overflow: auto;
-
 }
 
-.dTable::-webkit-scrollbar{
+.dTable::-webkit-scrollbar {
   width: 12px;
   background-color: #f5f5f5;
-
 }
 
-table{
+table {
   width: 100%;
   border-spacing: 10px;
-  word-break: break-all;
   border-collapse: collapse;
-
 }
 
-thead{
+thead {
   background-color: #f5f5f5;
-
 }
 
-tr{
+tr {
   border-bottom: 1px solid #f9efef;
 }
 
-tbody tr td{
-vertical-align: text-top;
-padding: 6px;
-max-width: 60px;
-
+tbody tr td {
+  vertical-align: text-top;
+  padding: 10px;
+  max-width: 60px;
 }
 
-thead tr th{
+thead tr th {
   padding: 5px;
   text-align: start;
-  margin-bottom: 50px;
-
+  margin-bottom: 5px;
 }
 
-tbody tr td.acao{
-  width: 100px!important;
+tbody tr td.acao {
+  width: 100px;
   text-align: center;
-
 }
 
-.modal-container{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #eceaea;
-    display: none;
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #dbdbdb;
+  display: none;  
+  align-items: center;
+  justify-content: center;
+}
 
+.modal {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;  
+}
+
+.modal label {
+  font-size: 14px;
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 18px;
+}
+
+.modal button {
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+  outline: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: #000000;
+  font-size: 15px;
+  color: #fff;
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal {
+  animation: modal 0.8s;
+}
+
+td button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+td button i {
+  font-size: 28px;
+}
+
+td button i :first-child {
+  margin-right: 10px;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0);
   }
 
-  .modal{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    width: 50%;
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
   }
 
-  .modal label{
-    font-size: 14px;
-    width: 100%;
-
+  .header span {
+    font-size: 15px;
   }
 
-  .modal input{
-    width: 100%;
-    outline: none;
-    padding: 5px 10px;
-    margin-bottom: 20px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-
+  #new {
+    padding: 5px;
+    font-size: 10px;
   }
 
-  .modal button{
-    width: 50%;
-    margin: 10px auto;
-    padding: 10px;
-    outline: none;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    border: none;
-    background-color: #397de2;
-    font-size: 20px;
-    color: #fff;
-
+  thead tr th.acao {
+    width: auto;
   }
 
-  .active{
-    display: flex;
-
+  td bottom i {
+    font-size: 20px ;
   }
 
-  .active .modal{
-    animation: modal .4s;
-
+  td bottom i:first-child {
+    margin-right: 0;
   }
 
-  td button{
-    border: none;
-    outline: none;
-    background: transparent;
+  .modal {
+    width: 90% ;
   }
 
-  td button i {
-    font-size: 25px;
-
+  .modal label {
+    font-size: 12px;
   }
-
-  td button i :first-child{
-    margin-right: 10px;
-
-
-  }
-
-  
-
-  @keyframes modal{
-    from{
-      opacity: 0;
-      transform: translate3d(0, -60px, 0);
-
-    }
-
-    to{
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-
-    }
-
-  }
-
-  
-  @media (max-width: 700px){
-    body{
-      font-size: 10px;
-  
-    }
-  
-    .header span{
-      font-size: 15px;
-  
-    }
-  
-    #new{
-      padding: 5px;
-      font-size: 10px;
-  
-    }
-  
-    thead tr th.acao{
-      width: auto!important;
-  
-    }
-  
-    td bottom i {
-      font-size: 20px!important;
-  
-    }
-  
-    td bottom i:first-child{
-      margin-right: 0;
-      
-    }
-  
-    .modal{
-      width: 90%!important;
-  
-    }
-  
-    .modal label{
-      font-size: 12px!important;
-  
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
